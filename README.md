@@ -1,1 +1,1 @@
-# PolyElectives
+# Poly Electives
