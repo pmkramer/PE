@@ -1,4 +1,16 @@
 language: java
+dist: trusty
+
+addons:
+        sonarcloud:
+                organization: "307group" 
+                token:
+                        secure:  "gFNyHJIjDVSMK7MVGW7K7z+MZeE8IxVqes++SA+riFoLudwVsD4m14M1hAd/cbj1Liwuv9au1kMIzoOuAebPr8Ff3IKTnxRIdzvJYJWFN+RHjYeMucLHCZkYStDq+HtNUaseF0FeoW3D1OYzduBIKvB8J2UNpbeaCVJ4PGerk6r6xepameES9okG8ElNjX28GyxuNv1GJfEzmZqJwoiq9YjnH144UX3Q7tgzr+lXXj6hSoAjMBG6i6nLidL0V/UnhWbu5m37sur48v49pDVtDr6Gpp6DLD53KfTGX2W18orn65EcMbAxZnWDH42XHij64+kxmhono77ytBLPHfSf7oru4XguyyxHxGc3NlAGIGG4zClyq04W6+R7y4trpnB1Rdx0IIvVEbh5W1eafugb7M7Emq1cZQv0yCUTzYQF3rO2z9UvV5Ks9ggDeiGOUUrz/mGsAjunx+xPYcsbzgd6sWNbT/SPRVacJ0tzbpJjI/m4ifKjsGeKxB5FEyiAdcb3kxGUWKdFIr9pJBI02ZCBvDcurzBz3Ah+a9Vr5ZziDIhqtbT2KxtDsUoYiAeSmKkRE3zQ6rUF9QxOo08HUuKyqlHVTob69bc0Yu8rzMthujz3/9+Jx6x+TcBbvd68sb6eL8e5XQrpMU0Cqf5REkaYooht+yBuCrmA0UnxF6hXt2Q="
+
+script:
+        - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
+
 jdk:
         - oraclejdk8
-script: ant build
+
+
